@@ -1,8 +1,43 @@
 body {
-  background-color: #333355;
+	font-family: sans-serif;
+	background-color: #333355;
+	color: grey;
 }
 
 h1 {
-  font-family: sans-serif;
-  color: grey;
+	color: white;
+
+}
+
+.header {
+    position: absolute;
+	top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); 
+}
+
+.top-left {
+	position: absolute;
+	top: 10%;
+	left: 10%;
+}
+
+.top-right {
+	position: absolute;
+	top: 10%;
+	right: 10%;
+	
+}
+
+.bottom-left {
+	position: absolute;
+	bottom: 10%;
+	left: 10%;
+}
+
+.bottom-right {
+	position: absolute;
+	bottom: 10%;
+	right: 10%;
 }
