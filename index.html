@@ -2,18 +2,20 @@
 <head>
 	<title>Cyph.er - Encyphering and Decyphering made Easy</title>
 	<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+	<script src="javascript.js"></script> 
 </head>
 <body>
 	<header>
 		<h1>Welcome to Cyph.er - Encyphering and Decyphering made Easy</h1>
-		<div class="footer">About - Contact Us</div>
+		<div class="footer"><a>About</a> - <a>Contact Us</a></div>
 	</header>
+	
 	<div class="top-left">
-		<h3>Caesar Cipher</h3>
+		<h3>ROT-N Cypher</h3>
 		<form>
 		Uncyphered Message:<br />
-		<input type="text" name="decypher"><br />
-		<input type="submit" value="Encypher">
+		<textarea rows="3" cols="25" id="decypherRotText"></textarea><br />
+		<button onclick="decypherRotButton()">Encypher</button>
 		<select>
 			<option value="1">1</option>
 			<option value="2">2</option>
@@ -27,7 +29,7 @@
 			<option value="10">10</option>
 			<option value="11">11</option>
 			<option value="12">12</option>
-			<option value="13">13</option>
+			<option selected value="13">13</option>
 			<option value="14">14</option>
 			<option value="15">15</option>
 			<option value="16">16</option>
@@ -41,41 +43,48 @@
 			<option value="24">24</option>
 			<option value="25">25</option>
 		</select>
-		<input type="submit" value="Decypher"><br />
-		<input type="text" name="encypher"><br />
+		<button type="submit" onclick="encypherRotButton()">Decypher</button><br />
+		<textarea rows="3" cols="25" id="encypherRotText"></textarea><br />
 		Encyphered Message:
 		</form> 
 	</div>
+	
 	<div class="top-right">
-		<h3>Cypher 2</h3>
+		<h3>Keyboard Cypher</h3>
 		<form>
 		Uncyphered Message:<br />
-		<input type="text" name="decypher"><br />
-		<input type="submit" value="Encypher">
-		<input type="submit" value="Decypher"><br />
-		<input type="text" name="encypher"><br />
+		<textarea rows="3" cols="25" name="encypher-keyboard"></textarea><br />
+		<button type="submit">Encypher</button>
+		<select>
+			<option value="left">Left</option>
+			<option value="right">Right</option>
+		</select>
+		<button type="submit">Decypher</button><br />
+		<textarea rows="3" cols="25" name="decypher-keyboard"></textarea><br />
 		Encyphered Message:
 		</form> 	
 	</div>
+	
 	<div class="bottom-left">
-		<h3>Cypher 3</h3>
+		<h3>A1Z26 Cypher</h3>
 		<form>
 		Uncyphered Message:<br />
-		<input type="text" name="decypher"><br />
-		<input type="submit" value="Encypher">
-		<input type="submit" value="Decypher"><br />
-		<input type="text" name="encypher"><br />
+		<textarea rows="3" cols="25" name="encypher-a1z26"></textarea><br />
+		<button type="submit">Encypher</button>
+		<button type="submit">Decypher</button><br />
+		<textarea rows="3" cols="25" name="decypher-a1z26"></textarea><br />
 		Encyphered Message:
 		</form> 	
 	</div>
+	
 	<div class="bottom-right">
-		<h3>Cypher 4</h3>
+		<h3>QWERTY Cypher</h3>
 		<form>
 		Uncyphered Message:<br />
-		<input type="text" name="decypher"><br />
-		<input type="submit" value="Encypher">
-		<input type="submit" value="Decypher"><br />
-		<input type="text" name="encypher"><br />
+		<textarea rows="3" cols="25" name="encypher-qwerty"></textarea><br />
+		<button type="submit">Encypher</button>
+		<button type="submit">Decypher</button><br />
+		<textarea rows="3" cols="25" name="decypher-qwerty"></textarea><br />
 		Encyphered Message:
 		</form> 	
 	</div>

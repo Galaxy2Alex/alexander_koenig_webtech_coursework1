@@ -1,11 +1,11 @@
 body {
 	font-family: sans-serif;
-	background-color: #333355;
+	background-color: #335;
 	color: grey;
 }
 
 h1 {
-	color: #333355;
+	color: #335;
 	text-align: center;
 }
 
@@ -42,4 +42,11 @@ header {
 	position: absolute;
 	bottom: 10%;
 	right: 30%;
+}
+
+.footer {
+	color: black;
+	text-align: center;
+	font-weight: bold;
+	margin-top: 5%;
 }
