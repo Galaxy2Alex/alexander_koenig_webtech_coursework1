@@ -407,3 +407,17 @@ function getLetterFromNumber (number) {
 		return number;
 	}
 }
+
+function about() {
+	document.getElementById("overlay").style.display = "flex";
+	document.getElementById("overlay-text").innerHTML = 'This is a website for encyphering and decyphering messages in four different cyphers. The arrows next to the buttons indicate which way the text will go. For the Rot-N and the Keyboard Cypher, you can choose what way the cypher should work. Keep in mind that, the other way around, it will be reverse.';
+}
+
+function contactUs() {
+	document.getElementById("overlay").style.display = "flex";
+	document.getElementById("overlay-text").innerHTML = 'Alexander Koenig<br />Edinburgh Napier University, Merchiston Campus<br /><a href="mailto:40322645@live.napier.ac.uk">Send Email</a>';
+}
+
+function overlayOff() {
+	document.getElementById("overlay").style.display = "none";
+}

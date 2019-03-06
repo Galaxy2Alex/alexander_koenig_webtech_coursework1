@@ -7,13 +7,16 @@
 <body>
 	<header>
 		<h1>Welcome to Cyph.er - Encyphering and Decyphering made Easy</h1>
-		<div class="footer-box"><div class="footer"><a>About</a> - <a>Contact Us</a></div></div>
 	</header>
+	
+	<div id="overlay" onclick="overlayOff()">
+		<div id="overlay-text"></div>
+	</div>
 	
 	<div class="top-left">
 		<h3>ROT-N Cypher</h3>
 		Uncyphered Message:<br />
-		<textarea rows="3" cols="26" id="decypheredRotText"></textarea><br />
+		<textarea rows="3" cols="27" id="decypheredRotText"></textarea><br />
 		▼<button onclick="encypherRotButton()">Encypher</button>
 		<select id="rotSelect">
 			<option value="1">1</option>
@@ -43,41 +46,42 @@
 			<option value="25">25</option>
 		</select>
 		<button onclick="decypherRotButton()">Decypher</button>▲<br />
-		<textarea rows="3" cols="26" id="encypheredRotText"></textarea><br />
+		<textarea rows="3" cols="27" id="encypheredRotText"></textarea><br />
 		Encyphered Message:
 	</div>
 	
 	<div class="top-right">
 		<h3>Keyboard Cypher</h3>
 		Uncyphered Message:<br />
-		<textarea rows="3" cols="26" id="decypheredKeyboardText"></textarea><br />
+		<textarea rows="3" cols="27" id="decypheredKeyboardText"></textarea><br />
 		▼<button onclick="encypherKeyboardButton()">Encypher</button>
 		<select id="keyboardSelect">
 			<option value="left" selected>Left</option>
 			<option value="right">Right</option>
 		</select>
 		<button onclick="decypherKeyboardButton()">Decypher</button>▲<br />
-		<textarea rows="3" cols="26" id="encypheredKeyboardText"></textarea><br />
+		<textarea rows="3" cols="27" id="encypheredKeyboardText"></textarea><br />
 		Encyphered Message:	
 	</div>
 	
 	<div class="bottom-left">
 		<h3>A1Z26 Cypher</h3>
 		Uncyphered Message:<br />
-		<textarea rows="3" cols="26" id="decypheredA1Z26Text"></textarea><br />
+		<textarea rows="3" cols="27" id="decypheredA1Z26Text"></textarea><br />
 		▼<button onclick="encypherA1Z26Button()">Encypher</button>
 		<button onclick="decypherA1Z26Button()">Decypher</button>▲<br />
-		<textarea rows="3" cols="26" id="encypheredA1Z26Text"></textarea><br />
+		<textarea rows="3" cols="27" id="encypheredA1Z26Text"></textarea><br />
 		Encyphered Message: 	
 	</div>
 	
 	<div class="bottom-right">
 		<h3>QWERTY Cypher</h3>
 		Uncyphered Message:<br />
-		<textarea rows="3" cols="25" id="decypheredQwertyText"></textarea><br />
+		<textarea rows="3" cols="27" id="decypheredQwertyText"></textarea><br />
 		▼<button onclick="encypherQwertyButton()">Encypher</button>
 		<button onclick="decypherQwertyButton()">Decypher</button>▲<br />
-		<textarea rows="3" cols="25" id="encypheredQwertyText"></textarea><br />
+		<textarea rows="3" cols="27" id="encypheredQwertyText"></textarea><br />
 		Encyphered Message:	
 	</div>
+	<div class="footer"><a onclick="about()" href="javascript:void(0);">About</a> - <a onclick="contactUs()" href="javascript:void(0);">Contact Us</a></div>
 </body>
