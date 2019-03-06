@@ -73,14 +73,17 @@ function encypherA1Z26Button () {
 	for (var i = 0; i < input.length; i++) {
 		if (letters.test(input.charAt(i))) {
 			output = output + getNumberFromLetter(input.charAt(i).toUpperCase()) + "-";
-		} else if (input.charAt(i) == " ") {
-			
-			output[-1] = " ";
+		} else {
+			output = output.slice(0, -1);
+			output = output + " ";
 		}
-	    
 	}
-	document.getElementById("encypheredA1Z26Text").value = output;
 	
+	if (output[output.length - 1] == "-") {
+		output = output.slice(0, -1);
+	}
+	
+	document.getElementById("encypheredA1Z26Text").value = output;
 }
 
 function decypherA1Z26Button () {
@@ -97,6 +100,7 @@ function decypherA1Z26Button () {
 			}		
 			output = output + " ";
 		}
+		
 	document.getElementById("decypheredA1Z26Text").value = output;
 }
 
