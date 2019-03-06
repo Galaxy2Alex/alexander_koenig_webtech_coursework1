@@ -67,17 +67,37 @@ function decypherRotButton() {
 
 function encypherA1Z26Button () {
 	var input = document.getElementById("decypheredA1Z26Text").value;
+	var output = "";
+	var letters = /[a-z]/i;
+	
+	for (var i = 0; i < input.length; i++) {
+		if (letters.test(input.charAt(i))) {
+			output = output + getNumberFromLetter(input.charAt(i).toUpperCase()) + "-";
+		} else if (input.charAt(i) == " ") {
+			
+			output[-1] = " ";
+		}
+	    
+	}
+	document.getElementById("encypheredA1Z26Text").value = output;
 	
 }
 
 function decypherA1Z26Button () {
 	var input = document.getElementById("encypheredA1Z26Text").value;
-	var delim = /[^0-9]/i;
-	input = input.split(delim);
+	var spacing = input.split(" ");
+	var output = "";
 	
-	for (var i = 0; i < input.length; i++) {
-		//window.alert(input[i]);
-	}
+		for (var i = 0; i < spacing.length; i++) {
+			var word = spacing[i];
+			var delim = /[^0-9]/i;
+			word = word.split(delim);
+			for (var j = 0; j < word.length; j++) {
+				output = output + getLetterFromNumber(word[j]);
+			}		
+			output = output + " ";
+		}
+	document.getElementById("decypheredA1Z26Text").value = output;
 }
 
 function getNumberFromLetter (letter) {
