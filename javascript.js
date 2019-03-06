@@ -221,6 +221,77 @@ function decypherA1Z26Button () {
 	document.getElementById("decypheredA1Z26Text").value = output;
 }
 
+function encypherQwertyButton() {
+	var input = document.getElementById("decypheredQwertyText").value;
+	var output = "";
+	var map = [["A", "Q"], ["B", "W"], ["C", "E"], ["D", "R"], ["E", "T"], ["F", "Y"], ["G", "U"], ["H", "I"], ["I", "O"], ["J", "P"], ["K", "A"], ["L", "S"],  ["M", "D"],  ["N", "F"],  ["O", "G"],  ["P", "H"],  ["Q", "J"],  ["R", "K"],  ["S", "L"],  ["T", "Z"],  ["U", "X"],  ["V", "C"],  ["W", "V"],  ["X", "B"],  ["Y", "N"],  ["Z", "M"]];
+	
+	for (var i = 0; i < input.length; i++) {
+		var casing;
+		var letters = /[a-z]/i;
+		
+		if (letters.test(input.charAt(i))) {
+			if (input.charAt(i) == input.charAt(i).toUpperCase()) {
+				casing = true;
+			} else {
+				casing = false;
+			}
+			var mapResult;
+			for (var j = 0; j < map.length; j++) {
+				if (map[j][0] == input.charAt(i).toUpperCase()) {
+					
+					mapResult = map[j];
+					break;
+				}
+			}
+			if (!casing) {
+				output = output + mapResult[1].toLowerCase(); 
+			} else {
+				output = output + mapResult[1];
+			}
+		} else {
+		output = output + input.charAt(i);
+		}
+	}
+	
+	document.getElementById("encypheredQwertyText").value = output;
+}
+
+function decypherQwertyButton() {
+	var input = document.getElementById("encypheredQwertyText").value;
+	var output = "";
+	var map = [["A", "Q"], ["B", "W"], ["C", "E"], ["D", "R"], ["E", "T"], ["F", "Y"], ["G", "U"], ["H", "I"], ["I", "O"], ["J", "P"], ["K", "A"], ["L", "S"],  ["M", "D"],  ["N", "F"],  ["O", "G"],  ["P", "H"],  ["Q", "J"],  ["R", "K"],  ["S", "L"],  ["T", "Z"],  ["U", "X"],  ["V", "C"],  ["W", "V"],  ["X", "B"],  ["Y", "N"],  ["Z", "M"]];
+	
+	for (var i = 0; i < input.length; i++) {
+		var casing;
+		var letters = /[a-z]/i;
+		
+		if (letters.test(input.charAt(i))) {
+			if (input.charAt(i) == input.charAt(i).toUpperCase()) {
+				casing = true;
+			} else {
+				casing = false;
+			}
+			var mapResult;
+			for (var j = 0; j < map.length; j++) {
+				if (map[j][1] == input.charAt(i).toUpperCase()) {
+					
+					mapResult = map[j];
+					break;
+				}
+			}
+			if (!casing) {
+				output = output + mapResult[0].toLowerCase(); 
+			} else {
+				output = output + mapResult[0];
+			}
+		} else {
+		output = output + input.charAt(i);
+		}
+	}
+	document.getElementById("decypheredQwertyText").value = output;
+}
+
 function getNumberFromLetter (letter) {
 	if (letter == "A") {
 		return 1;
