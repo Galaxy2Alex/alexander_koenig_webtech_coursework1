@@ -8,9 +8,9 @@ function encypherRotButton() {
 		
 		if (letters.test(input.charAt(i))) {
 			if (input.charAt(i) == input.charAt(i).toUpperCase()) {
-				casing = true;
-			} else {
 				casing = false;
+			} else {
+				casing = true;
 			}
 			
 			
@@ -48,6 +48,7 @@ function decypherRotButton() {
 			}
 			
 			var x = getNumberFromLetter(input.charAt(i).toUpperCase()) - (document.getElementById("rotSelect").selectedIndex + 1);
+			
 			if (x < 1) {
 				x = x + 26;
 			}
@@ -64,6 +65,122 @@ function decypherRotButton() {
 	}
 	document.getElementById("decypheredRotText").value = output;
 }
+
+function encypherKeyboardButton() {
+	var input = document.getElementById("decypheredKeyboardText").value;
+	var output = "";
+	
+	for (var i = 0; i < input.length; i++) {
+		var casing;
+		var letters = /[a-z]/i;
+		var x = input.charAt(i);
+		
+		if (letters.test(input.charAt(i))) {
+			if (input.charAt(i) == input.charAt(i).toUpperCase()) {
+				casing = true;
+			} else {
+				casing = false;
+			}
+		}
+		
+		var row;
+		if (/[QWERTYUIOP]/.test(input.charAt(i).toUpperCase())) {
+			row = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"];
+		} else if (/[ASDFGHJKL]/.test(input.charAt(i).toUpperCase())) {
+			row = ["A", "S", "D", "F", "G", "H", "J", "K", "L"];
+		} else if (/[ZXCVBNM]/.test(input.charAt(i).toUpperCase())) {
+			row = ["Z", "X", "C", "V", "B", "N", "M"];
+		} else {
+			row = null;
+		}
+		
+		if (row != null) {
+			if (document.getElementById("keyboardSelect").selectedIndex == 0) {
+				var grr = (row.indexOf(input.charAt(i).toUpperCase())) - 1;
+				if (grr == -1) {
+					x = row[row.length - 1];
+				} else {
+					x = row[(row.indexOf(input.charAt(i).toUpperCase())) - 1];
+				}
+			} else {
+				var grr = (row.indexOf(input.charAt(i).toUpperCase())) + 1;
+				if (grr == row.length) {
+					x = row[0];
+				} else {
+					x = row[(row.indexOf(input.charAt(i).toUpperCase())) + 1];
+				}
+			}
+			var letters = /[a-z]/i;
+			if (!casing && typeof x == 'string') {
+				output = output + x.toLowerCase(); 
+			} else {
+				output = output + x;
+			}
+		} else {
+			output = output + x;
+		}
+	}
+	
+	document.getElementById("encypheredKeyboardText").value = output;
+}
+
+function decypherKeyboardButton() {
+	var input = document.getElementById("encypheredKeyboardText").value;
+	var output = "";
+	
+		for (var i = 0; i < input.length; i++) {
+		var casing;
+		var letters = /[a-z]/i;
+		var x = input.charAt(i);
+		
+		if (letters.test(input.charAt(i))) {
+			if (input.charAt(i) == input.charAt(i).toUpperCase()) {
+				casing = true;
+			} else {
+				casing = false;
+			}
+		}
+		
+		var row;
+		if (/[QWERTYUIOP]/.test(input.charAt(i).toUpperCase())) {
+			row = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"];
+		} else if (/[ASDFGHJKL]/.test(input.charAt(i).toUpperCase())) {
+			row = ["A", "S", "D", "F", "G", "H", "J", "K", "L"];
+		} else if (/[ZXCVBNM]/.test(input.charAt(i).toUpperCase())) {
+			row = ["Z", "X", "C", "V", "B", "N", "M"];
+		} else {
+			row = null;
+		}
+		
+		if (row != null) {
+			if (document.getElementById("keyboardSelect").selectedIndex == 1) {
+				var grr = (row.indexOf(input.charAt(i).toUpperCase())) - 1;
+				if (grr == -1) {
+					x = row[row.length - 1];
+				} else {
+					x = row[(row.indexOf(input.charAt(i).toUpperCase())) - 1];
+				}
+			} else {
+				var grr = (row.indexOf(input.charAt(i).toUpperCase())) + 1;
+				if (grr == row.length) {
+					x = row[0];
+				} else {
+					x = row[(row.indexOf(input.charAt(i).toUpperCase())) + 1];
+				}
+			}
+			var letters = /[a-z]/i;
+			if (!casing && typeof x == 'string') {
+				output = output + x.toLowerCase(); 
+			} else {
+				output = output + x;
+			}
+		} else {
+			output = output + x;
+		}
+	}
+
+	document.getElementById("decypheredKeyboardText").value = output;
+}	
 
 function encypherA1Z26Button () {
 	var input = document.getElementById("decypheredA1Z26Text").value;
