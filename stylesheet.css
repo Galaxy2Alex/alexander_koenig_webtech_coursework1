@@ -76,6 +76,7 @@ header:before {
 	background-color: rgba(26, 26, 48, 0.96);
 	z-index: 2;
 	cursor: pointer;
+	border-radius: 25px;
 }
 
 #overlay-text {
